@@ -6,7 +6,7 @@
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 09:05:04 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/01/18 09:46:33 by erocha-l         ###   ########.fr       */
+/*   Updated: 2026/02/09 19:45:05 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 HumanA::HumanA(std::string name, Weapon &weapon) : name(name), equipment(weapon)
 {
-    return ; 
+
 }
 
 HumanA::~HumanA(void)
 {
-    return ;
+
 }
 
 void    HumanA::attack(void)

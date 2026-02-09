@@ -6,7 +6,7 @@
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 09:18:52 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/01/18 09:49:15 by erocha-l         ###   ########.fr       */
+/*   Updated: 2026/02/09 19:48:00 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanB{
         HumanB(std::string value);
         ~HumanB(void);
         void    attack(void);
-        void    setWeapon(Weapon *new_weapon);
+        void    setWeapon(Weapon &new_weapon);
 
     private:
         std::string name;

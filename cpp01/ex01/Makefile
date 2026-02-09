@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/10 18:24:23 by erocha-l          #+#    #+#              #
-#    Updated: 2026/01/17 23:01:26 by erocha-l         ###   ########.fr        #
+#    Updated: 2026/02/09 19:34:36 by erocha-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,7 @@ all: $(NAME)
 $(NAME): $(C_SOURCE)
 	$(CC) $(FLAGS) $(C_SOURCE) -o Horde
 
-re: $(NAME)
-	make fclean
-	make all
+re: fclean all
 
 clean:
 	rm -rf $(NAME)

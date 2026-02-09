@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 16:36:45 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/02/09 19:10:38 by erocha-l         ###   ########.fr       */
+/*   Created: 2026/02/08 22:38:12 by erocha-l          #+#    #+#             */
+/*   Updated: 2026/02/08 22:56:34 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Zombie.hpp"
+#ifndef __WRONGCAT_H_
+#define __WRONGCAT_H_
 
-Zombie::Zombie(std::string z_name) : name(z_name)
-{
+#include <iostream>
+#include <string>
+#include "./WrongAnimal.hpp"
 
-}
+class WrongCat : public WrongAnimal
+{      
+    public:
+        WrongCat();
+        WrongCat(const WrongCat &copy);
+        WrongCat &operator=(const WrongCat &other);
+        virtual ~WrongCat();
+        void makeSound() const;
+};
 
-Zombie::~Zombie(void)
-{
-    std::cout << this->name << ": Died... Rest in peace" << std::endl ;
-}
-
-void    Zombie::announce(void)
-{
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl ;
-}
-
-
+#endif

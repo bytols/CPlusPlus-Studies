@@ -5,36 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 16:36:49 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/02/09 19:51:54 by erocha-l         ###   ########.fr       */
+/*   Created: 2026/02/08 22:49:10 by erocha-l          #+#    #+#             */
+/*   Updated: 2026/02/08 22:52:04 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "./Weapon.hpp"
-#include "./HumanA.hpp"
-#include "./HumanB.hpp"
 
+#include "./Cat.hpp"
+#include "./WrongCat.hpp"
+#include "./WrongAnimal.hpp"
 
 int main()
 {
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
-    }
+    std::cout << "--- TESTE ANIMAL ---" << std::endl;
+    const Animal* meta = new Animal();
+    const Animal* i = new Cat();
+    i->makeSound();
+    meta->makeSound();
+    delete meta;
+    delete i;
 
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.attack();
-        jim.setWeapon(club);
-        club.setType("some other type of club");
-        jim.attack();
-    }
+    std::cout << "\n--- TESTE WRONG ---" << std::endl;
+    const WrongAnimal* wrongMeta = new WrongAnimal();
+    const WrongAnimal* wrongCat = new WrongCat();
+    wrongCat->makeSound();
+    wrongMeta->makeSound();
+    delete wrongMeta;
+    delete wrongCat;
 
     return 0;
 }

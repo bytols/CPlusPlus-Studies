@@ -6,7 +6,7 @@
 #    By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/27 23:28:29 by erocha-l          #+#    #+#              #
-#    Updated: 2026/02/07 15:16:03 by erocha-l         ###   ########.fr        #
+#    Updated: 2026/02/08 22:44:23 by erocha-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FLAGS =-Wall	\
 
 CC= c++
 
-C_SOURCE= main.cpp ScavTrap.cpp ClapTrap.cpp
+C_SOURCE= main.cpp ScavTrap.cpp ClapTrap.cpp FragTrap.cpp
 
 all: $(NAME)
 

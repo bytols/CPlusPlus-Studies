@@ -6,35 +6,26 @@
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:36:49 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/02/09 19:51:54 by erocha-l         ###   ########.fr       */
+/*   Updated: 2026/02/09 19:41:55 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
-#include "./Weapon.hpp"
-#include "./HumanA.hpp"
-#include "./HumanB.hpp"
-
 
 int main()
 {
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
-    }
+    std::string str = "HI THIS IS BRAIN";    
+    std::string *stringPTR = &str;
+    std::string &stringREF = str;
 
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.attack();
-        jim.setWeapon(club);
-        club.setType("some other type of club");
-        jim.attack();
-    }
+    std::cout << "The memory address of the string variable: " <<  &str << std::endl;
+    std::cout << "The memory address held by stringPTR: " <<  stringPTR << std::endl;
+    std::cout << "The memory address held by stringREF: " <<  &stringREF << std::endl;
 
-    return 0;
+    std::cout << "The value of the string variable: " <<  str << std::endl;
+    std::cout << "The value held by stringPTR: " <<  *stringPTR << std::endl;
+    std::cout << "The value held by stringREF: " <<  stringREF << std::endl; 
+
+    return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:36:49 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/01/19 14:48:17 by erocha-l         ###   ########.fr       */
+/*   Updated: 2026/02/09 19:54:45 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void    swap_string(std::ifstream &file,  std::ofstream &copyf,std::string find,
 int main(int argc, char *argv[])
 {
     if (argc != 4)
-        return (0);
+        return (1);
     
     std::string match(argv[2]);
     std::string replace(argv[3]);
@@ -65,8 +65,8 @@ int main(int argc, char *argv[])
     std::ifstream file(argv[1]);
     if ((!file.is_open()))
     {
-        std::cerr << "error opening the file!" << std::endl; //check for other error are been writing in the right stream
-        return (0);
+        std::cerr << "error opening the file!" << std::endl;
+        return (1);
     }
     std::ofstream cpyfile(filename.c_str());
     swap_string(file, cpyfile, match, replace);

@@ -6,7 +6,7 @@
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:36:51 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/01/17 22:32:08 by erocha-l         ###   ########.fr       */
+/*   Updated: 2026/02/09 19:11:40 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ class Zombie
         ~Zombie(void);
         void name_zombie(std::string z_name);
         void announce( void );
-        Zombie* newZombie( std::string name );
-        void randomChump( std::string name );
-        Zombie* zombieHorde( int N, std::string name );
-
 
     private:
         std::string name;

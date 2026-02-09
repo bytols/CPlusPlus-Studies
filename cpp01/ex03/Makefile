@@ -6,11 +6,11 @@
 #    By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/10 18:24:23 by erocha-l          #+#    #+#              #
-#    Updated: 2026/02/09 19:58:47 by erocha-l         ###   ########.fr        #
+#    Updated: 2026/02/09 19:51:00 by erocha-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  Harl
+NAME =  uviolence
 
 FLAGS =-Wall	\
        -Werror  \
@@ -19,12 +19,12 @@ FLAGS =-Wall	\
 
 CC= c++
 
-C_SOURCE= main.cpp Harl.cpp
+C_SOURCE= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 all: $(NAME)
 
 $(NAME): $(C_SOURCE)
-	$(CC) $(FLAGS) $(C_SOURCE) -o Harl
+	$(CC) $(FLAGS) $(C_SOURCE) -o uviolence
 
 re: fclean all
 

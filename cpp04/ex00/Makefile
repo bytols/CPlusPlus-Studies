@@ -1,16 +1,17 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/10 18:24:23 by erocha-l          #+#    #+#              #
-#    Updated: 2026/01/16 22:32:50 by erocha-l         ###   ########.fr        #
+#    Created: 2026/02/08 22:52:37 by erocha-l          #+#    #+#              #
+#    Updated: 2026/02/08 22:53:19 by erocha-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  loneZombie
+
+NAME =  Animal
 
 FLAGS =-Wall	\
        -Werror  \
@@ -19,12 +20,12 @@ FLAGS =-Wall	\
 
 CC= c++
 
-C_SOURCE= main.cpp Zombie.cpp
+C_SOURCE= main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp 
 
 all: $(NAME)
 
 $(NAME): $(C_SOURCE)
-	$(CC) $(FLAGS) $(C_SOURCE) -o loneZombie
+	$(CC) $(FLAGS) $(C_SOURCE) -o Animal
 
 re: $(NAME)
 	make fclean
