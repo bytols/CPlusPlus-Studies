@@ -30,7 +30,7 @@ class Fixed
         Fixed(const Fixed &copy);
         Fixed &operator=(const Fixed &other);
         float toFloat( void ) const;
-        float toInt( void ) const;
+        int toInt( void ) const;
         ~Fixed();
         int getRawBits( void ) const;
         void setRawBits( int const raw );

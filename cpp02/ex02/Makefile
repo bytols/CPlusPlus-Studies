@@ -6,7 +6,7 @@
 #    By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/27 23:28:29 by erocha-l          #+#    #+#              #
-#    Updated: 2026/02/02 00:55:33 by erocha-l         ###   ########.fr        #
+#    Updated: 2026/02/10 18:54:47 by erocha-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,7 @@ all: $(NAME)
 $(NAME): $(C_SOURCE)
 	$(CC) $(FLAGS) $(C_SOURCE) -o Fixed
 
-re: $(NAME)
-	make fclean
-	make all
+re: fclean all
 
 clean:
 	rm -rf $(NAME)

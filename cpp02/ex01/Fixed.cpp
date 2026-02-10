@@ -27,13 +27,13 @@ Fixed::Fixed(const Fixed &copy) : _RawBits(copy._RawBits)
 Fixed::Fixed(const int num)
 {
     this->_RawBits = num << this->_frac;
-    std::cout << "Param int constructor called" << std::endl; 
+    std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float num)
 {
     this->_RawBits = roundf(num * (1 << _frac));
-    std::cout << "Param floar constructor called" << std::endl; 
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &other)
@@ -67,8 +67,8 @@ float Fixed::toFloat(void) const {
     return ((float)this->_RawBits / (1 << this->_frac));
 }
 
-float Fixed::toInt(void) const {
-    return ((int)this->_RawBits  >> this->_frac);
+int Fixed::toInt(void) const {
+    return (this->_RawBits >> this->_frac);
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &i) 
