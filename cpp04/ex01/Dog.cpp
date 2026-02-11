@@ -11,17 +11,20 @@
 /* ************************************************************************** */
 
 #include "./Dog.hpp"
-#include "./Animal.hpp"
 
 Dog::Dog(void) : Animal()
 {
     this->type = "Dog";
+    this->_brain = new Brain;
     std::cout << "Dog Default constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
     this->type = "Dog";
+    this->_brain = new Brain;
+    for (int i = 0; i < 99; i++)
+        this->_brain[i] = copy._brain[i];
     std::cout << "Dog Copy constructor called" << std::endl;
 }
 
@@ -30,6 +33,8 @@ Dog &Dog::operator=(const Dog &other)
     if (this != &other)
     {
         this->type = other.type;
+        for (int i = 0; i < 99; i++)
+            this->_brain[i] = other._brain[i];
     }
     std::cout << "Dog Copy assignment operator called" << std::endl;
     return (*this);
@@ -37,6 +42,7 @@ Dog &Dog::operator=(const Dog &other)
 
 Dog::~Dog(void)
 {
+    delete _brain;
     std::cout << "Dog Destructor called" << std::endl;
 }
 

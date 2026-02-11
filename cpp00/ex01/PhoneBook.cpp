@@ -50,7 +50,7 @@ int     PhoneBook::check_valid_string(std::string str)
         if (std::isalnum(str[i]))
             return (true);
     }
-    std::cout << "[ERROR] empty value" << std::endl;
+    std::cerr << "[ERROR] empty value" << std::endl;
     return (false);
 }
 

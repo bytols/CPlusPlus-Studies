@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
+/*   By: erocha-l <erocha-l@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 19:48:46 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/01/20 19:51:51 by erocha-l         ###   ########.fr       */
+/*   Created: 2026-02-11 00:28:39 by erocha-l          #+#    #+#             */
+/*   Updated: 2026-02-11 00:28:39 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __HARL_H_
-#define __HARL_H_
+#ifndef _BRAIN_HPP_
+#define _BRAIN_HPP_
 #include <string>
 #include <iostream>
 
-class Harl{
-    
-    public:
-        Harl(void);
-        ~Harl(void);
-        void complain( std::string level );
-    
-    private:
 
-        void debug( void );
-        void info( void );
-        void warning( void );
-        void error( void );
+class Brain
+{
+
+    private:
+        std::string ideas[100];
+
+    public:
+        Brain(void);
+        Brain(const Brain &copy);
+        Brain &operator=(const Brain &other);
+        ~Brain(void);
 
 };
 
