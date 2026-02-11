@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __SCAVTRAP_H_
-#define __SCAVTRAP_H_
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 #include <iostream>
 #include <string>
 #include "./ClapTrap.hpp"

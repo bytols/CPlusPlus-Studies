@@ -10,38 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap trapper("TRAP-MASTER");
-    ClapTrap anonymous; 
+    std::cout << "=== Construction chaining ===" << std::endl;
+    ScavTrap scav("SCAV-01");
     std::cout << std::endl;
 
-    trapper.attack("a training dummy");
-    trapper.takeDamage(5);
-    trapper.beRepaired(3);
+    std::cout << "=== ScavTrap attack (different message from ClapTrap) ===" << std::endl;
+    scav.attack("a training dummy");
     std::cout << std::endl;
 
-    for (int i = 0; i < 9; i++) {
-        trapper.attack("the air");
-    }
-    trapper.beRepaired(10);
+    std::cout << "=== ScavTrap takes damage and repairs ===" << std::endl;
+    scav.takeDamage(30);
+    scav.beRepaired(10);
     std::cout << std::endl;
 
-    ClapTrap target("Target");
-    target.takeDamage(10);
-    target.takeDamage(5);
-    target.attack("anything");   
-    target.beRepaired(5);       
+    std::cout << "=== ScavTrap special ability ===" << std::endl;
+    scav.guardGate();
     std::cout << std::endl;
 
-    ClapTrap original("Original");
-    ClapTrap clone(original);    
-    ClapTrap assigned;
-    assigned = original;         
+    std::cout << "=== Drain all energy (48 remaining) ===" << std::endl;
+    for (int i = 0; i < 48; i++)
+        scav.attack("the air");
     std::cout << std::endl;
 
+    std::cout << "=== No energy left ===" << std::endl;
+    scav.attack("anything");
+    scav.beRepaired(5);
+    std::cout << std::endl;
+
+    std::cout << "=== ClapTrap for comparison ===" << std::endl;
+    ClapTrap clap("CLAP-01");
+    clap.attack("a target");
+    std::cout << std::endl;
+
+    std::cout << "=== Destruction chaining (reverse order) ===" << std::endl;
     return (0);
 }

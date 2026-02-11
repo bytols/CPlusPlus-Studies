@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  ScavTrap
+NAME =  FragTrap
 
 FLAGS =-Wall	\
        -Werror  \
@@ -24,11 +24,9 @@ C_SOURCE= main.cpp ScavTrap.cpp ClapTrap.cpp FragTrap.cpp
 all: $(NAME)
 
 $(NAME): $(C_SOURCE)
-	$(CC) $(FLAGS) $(C_SOURCE) -o ScavTrap
+	$(CC) $(FLAGS) $(C_SOURCE) -o $(NAME)
 
-re: $(NAME)
-	make fclean
-	make all
+re: fclean all
 
 clean:
 	rm -rf $(NAME)

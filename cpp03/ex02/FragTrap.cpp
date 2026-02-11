@@ -12,32 +12,27 @@
 
 
 #include "./FragTrap.hpp"
-#include "./ClapTrap.hpp"
 
 FragTrap::FragTrap(void) :  ClapTrap()
 {
-    std::cout << "Default FragTrap constructor called" << std::endl;
+    std::cout << "FragTrap default constructor called" << std::endl;
     this->_attackDamage = 30;
     this->_energyPoints = 100;
     this->_hitPoints = 100;
-    std::cout << "FragTrap " << _name << " is ready for repetitive work!" << std::endl; 
-
 }
 
 FragTrap::FragTrap(std::string name) :  ClapTrap(name)
 {
-    std::cout << "parameterized FragTrap constructor called" << std::endl;
+    std::cout << "FragTrap " << this->_name << " constructor called" << std::endl;
     this->_attackDamage = 30;
     this->_energyPoints = 100;
     this->_hitPoints = 100;
-        std::cout << "FragTrap " << _name << " is ready for repetitive work!" << std::endl;  
 }
 
 
 FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
 {
-    std::cout << "Copy FragTrap constructor called" << std::endl;
-    std::cout << "FragTrap " << _name << " is ready for repetitive work!" << std::endl;
+    std::cout << "FragTrap " << this->_name << " copy constructor called" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &other)
@@ -49,7 +44,7 @@ FragTrap &FragTrap::operator=(const FragTrap &other)
         this->_energyPoints = other._energyPoints;
         this->_hitPoints = other._hitPoints;
     }
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "FragTrap copy assignment operator called" << std::endl;
     return (*this);
 }
 
@@ -76,5 +71,5 @@ void FragTrap::attack(const std::string& target)
 
 FragTrap::~FragTrap()
 {
-    std::cout << "FragTrap Destructor called" << std::endl;
+    std::cout << "FragTrap " << this->_name << " destructor called" << std::endl;
 }

@@ -10,38 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap trapper("TRAP-MASTER");
-    ClapTrap anonymous; 
+    std::cout << "=== FragTrap construction chaining ===" << std::endl;
+    FragTrap frag("FRAG-01");
     std::cout << std::endl;
 
-    trapper.attack("a training dummy");
-    trapper.takeDamage(5);
-    trapper.beRepaired(3);
+    std::cout << "=== FragTrap attack (30 damage) ===" << std::endl;
+    frag.attack("a target");
     std::cout << std::endl;
 
-    for (int i = 0; i < 9; i++) {
-        trapper.attack("the air");
-    }
-    trapper.beRepaired(10);
+    std::cout << "=== FragTrap takes damage and repairs ===" << std::endl;
+    frag.takeDamage(40);
+    frag.beRepaired(20);
     std::cout << std::endl;
 
-    ClapTrap target("Target");
-    target.takeDamage(10);
-    target.takeDamage(5);
-    target.attack("anything");   
-    target.beRepaired(5);       
+    std::cout << "=== FragTrap special ability ===" << std::endl;
+    frag.highFivesGuys();
     std::cout << std::endl;
 
-    ClapTrap original("Original");
-    ClapTrap clone(original);    
-    ClapTrap assigned;
-    assigned = original;         
+    std::cout << "=== ScavTrap for comparison ===" << std::endl;
+    ScavTrap scav("SCAV-01");
+    scav.attack("a target");
+    scav.guardGate();
     std::cout << std::endl;
 
+    std::cout << "=== Destruction chaining (reverse order) ===" << std::endl;
     return (0);
 }
