@@ -6,12 +6,12 @@
 #    By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 22:52:37 by erocha-l          #+#    #+#              #
-#    Updated: 2026/02/08 22:53:19 by erocha-l         ###   ########.fr        #
+#    Updated: 2026/02/11 01:00:33 by erocha-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME =  Animal
+NAME =  ThinkingAnimal
 
 FLAGS =-Wall	\
        -Werror  \
@@ -20,12 +20,12 @@ FLAGS =-Wall	\
 
 CC= c++
 
-C_SOURCE= main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp 
+C_SOURCE= main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp Brain.cpp
 
 all: $(NAME)
 
 $(NAME): $(C_SOURCE)
-	$(CC) $(FLAGS) $(C_SOURCE) -o Animal
+	$(CC) $(FLAGS) $(C_SOURCE) -o ThinkingAnimal
 
 re: $(NAME)
 	make fclean

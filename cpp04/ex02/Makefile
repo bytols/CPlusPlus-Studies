@@ -5,12 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/27 23:28:29 by erocha-l          #+#    #+#              #
-#    Updated: 2026/02/10 20:06:08 by erocha-l         ###   ########.fr        #
+#    Created: 2026/02/08 22:52:37 by erocha-l          #+#    #+#              #
+#    Updated: 2026/02/11 01:00:43 by erocha-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  Fixed
+
+NAME =  AbsAnimal
 
 FLAGS =-Wall	\
        -Werror  \
@@ -19,14 +20,16 @@ FLAGS =-Wall	\
 
 CC= c++
 
-C_SOURCE= main.cpp Fixed.cpp
+C_SOURCE= main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp Brain.cpp
 
 all: $(NAME)
 
 $(NAME): $(C_SOURCE)
-	$(CC) $(FLAGS) $(C_SOURCE) -o Fixed
+	$(CC) $(FLAGS) $(C_SOURCE) -o AbsAnimal
 
-re: fclean all
+re: $(NAME)
+	make fclean
+	make all
 
 clean:
 	rm -rf $(NAME)
