@@ -5,28 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/27 23:28:29 by erocha-l          #+#    #+#              #
-#    Updated: 2026/04/26 16:06:00 by erocha-l         ###   ########.fr        #
+#    Created: 2026/04/16 17:15:04 by erocha-l          #+#    #+#              #
+#    Updated: 2026/04/26 16:06:20 by erocha-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  ClapTrap
+NAME = 	Bureaucrat
 
 FLAGS =-Wall	\
        -Werror  \
        -Wextra  \
 	   -std=c++98 \
 
-CC= c++
+CC= g++
 
-C_SOURCE= main.cpp ClapTrap.cpp
+C_SOURCE= main.cpp Bureaucrat.cpp
 
 all: $(NAME)
 
 $(NAME): $(C_SOURCE)
-	$(CC) $(FLAGS) $(C_SOURCE) -o ClapTrap
+	$(CC) $(FLAGS) $(C_SOURCE) -o Bureaucrat
 
-re: fclean all
+re: $(NAME)
+	make fclean
+	make all
 
 clean:
 	rm -rf $(NAME)
