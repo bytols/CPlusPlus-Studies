@@ -19,7 +19,7 @@ FLAGS =-Wall	\
 
 CC= g++
 
-C_SOURCE= main.cpp Bureaucrat.cpp Form.cpp
+C_SOURCE= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 all: $(NAME)
 
