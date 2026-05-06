@@ -6,7 +6,7 @@
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:14:52 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/05/06 01:00:01 by erocha-l         ###   ########.fr       */
+/*   Updated: 2026/05/06 01:12:11 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ ScalarConverter::~ScalarConverter()
 
 bool is_all_digit(const std::string &str)
 {
-    for (long unsigned int i = 0; i < str.length(); i++)
+    long unsigned int i;
+    
+    if (str[0] == '-')
+        i = 1;
+    for (; i < str.length(); i++)
     {
         if (isdigit(str[i]) == false)
             return false;
@@ -51,9 +55,15 @@ bool is_all_digit(const std::string &str)
 
 bool is_float_double(const std::string &str)
 {
+    long unsigned int i;
+    
+    if (str == "+inf" ||  str == "+inff" ||  str == "-inff"||  str == "-inff"||  str == "nan"||  str == "nanf")
+        return true;
+    if (str[0] == '-')
+        i = 1;
     if (!isdigit(str[0]))
         return  false;
-    for (long unsigned int i = 0; i < str.length(); i++)
+    for (; i < str.length(); i++)
     {
         if (isdigit(str[i]) || str[i] == '.')
         {
@@ -108,3 +118,5 @@ void ScalarConverter::convert(const std::string &str)
     detect_type(str, &num);
     
 }
+
+#Estou lidando com o exercio 00 desse pdf eu implemente na pasta cpp06 ex00 apenas por enquanto uma funçào que verifica o tipo de literal que eu recebi como string, ouj se é invalido, vou lidar com overflow depois, gostaria que voce me ajudasse a melhorar e entender os pontos fracos da minha estrutura, mas caso esteja totalmente funcional nao altere nada
