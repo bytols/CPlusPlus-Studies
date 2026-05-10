@@ -25,9 +25,7 @@ all: $(NAME)
 $(NAME): $(C_SOURCE)
 	$(CC) $(FLAGS) $(C_SOURCE) -o ScalarConverter
 
-re: $(NAME)
-	make fclean
-	make all
+re: fclean all
 
 clean:
 	rm -rf $(NAME)

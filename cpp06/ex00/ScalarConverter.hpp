@@ -6,25 +6,30 @@
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:14:55 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/05/06 00:59:04 by erocha-l         ###   ########.fr       */
+/*   Updated: 2026/05/08 00:00:00 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __SCALARCONVERTER_H_
 #define __SCALARCONVERTER_H_
 
-#include <iostream>
+#include <cctype>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <string>
+
 
 class ScalarConverter
 {
-    public:
-    
-        static void convert(const std::string &str);
+    private:
         ScalarConverter();
         ScalarConverter(const ScalarConverter& copy);
         ScalarConverter& operator=(const ScalarConverter& other);
         ~ScalarConverter();
 
+    public:
+        static void convert(const std::string &str);
 };
 
 enum TipoAtivo {
@@ -36,14 +41,16 @@ enum TipoAtivo {
 };
 
 typedef struct data {
-
+    bool charValido;
+    bool intValido;
+    bool floatValido;
+    bool doubleValido;
     TipoAtivo tipo;
-    union  {
-    int IntVal;
-    char CharVal;
+
+    int    IntVal;
+    char   CharVal;
     double DoubleVal;
-    float FloatVal;
-    };
+    float  FloatVal;
 } data;
 
 #endif

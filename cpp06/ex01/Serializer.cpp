@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erocha-l <erocha-l@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/06 00:34:23 by erocha-l          #+#    #+#             */
-/*   Updated: 2026/05/08 16:15:58 by erocha-l         ###   ########.fr       */
+/*   Created: 2026/05/08 17:37:07 by erocha-l          #+#    #+#             */
+/*   Updated: 2026/05/08 17:42:25 by erocha-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "ScalarConverter.hpp"
+#ifndef __SERIALIZER_H__
+#define __SERIALIZER_H__
+#include <cstdint>
 #include <iostream>
 
-int main(int argc, char *argv[])
+
+class Serializer
 {
-    if (argc != 2)
-    {
-        std::cout << "Usage: ./ScalarConverter <literal>" << std::endl;
-        return 1;
-    }
-    ScalarConverter::convert(argv[1]);
-    return 0;
+    
+    private:
+    
+
+    
+    public:
+        uintptr_t serialize(Data* ptr);
+        uintptr_t serialize(Data* ptr);
+    
 }
+
+#endif
